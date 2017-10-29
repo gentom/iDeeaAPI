@@ -9,6 +9,6 @@ from gensim.models import word2vec
 # call the model
 model = word2vec.Word2Vec.load('wiki_jpn') # there is no model yet.
 
-def ideea(word):
+def iDeea(word):
     model.most_similar(word)
     return model[word]
