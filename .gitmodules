@@ -1,0 +1,3 @@
+[submodule "preprocessing/ja.text8"]
+	path = preprocessing/ja.text8
+	url = https://github.com/Hironsan/ja.text8.git
