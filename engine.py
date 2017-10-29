@@ -6,8 +6,10 @@ from gensim.models import word2vec
 model = word2vec.Word2Vec.load('./model/wiki_jpn')
 
 def iDeea(word):
-    return model.most_similar([word])
+    words = model.most_similar([word])
+    wordList = [words[i][0] for i in range(len(words))]
+    return wordList
 
+# test
 if __name__ == '__main__':
-    words = iDeea('日本')
-    print(words)
+    print(iDeea('サッカー'))
