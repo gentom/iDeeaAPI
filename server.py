@@ -9,6 +9,8 @@ import sys
 
 app = Flask(__name__)
 
+wordList = []
+
 @app.route("/", methods=['POST'])
 def iDeeaServer():
     if request.method == "POST":
@@ -16,6 +18,7 @@ def iDeeaServer():
         word = request.form['word']
         print(word)
         wordList = engine.iDeea(word)
+        print(wordList)
         #wordList_json = json.dumps(wordList, ensure_ascii=False)
         #return jsonify(wordList_json)
         return '200'
