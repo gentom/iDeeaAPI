@@ -18,9 +18,9 @@ def iDeeaServer():
         print(word)
         wordList = engine.iDeea(word)
         print(wordList)
-        #wordList_json = json.dumps(wordList, ensure_ascii=False)
-        #return jsonify(wordList_json)
-        return '200' # responseCode to unity client
+        wordList_json = json.dumps(wordList, ensure_ascii=False)
+        return wordList_json
+        #return word
 
 if __name__ == "__main__":
     app.run(debug=True, port=8000)
