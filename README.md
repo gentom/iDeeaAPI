@@ -10,5 +10,5 @@ Currently support only japanese word.
 * Flask_SocketIO  
     
       
-I use [ja.text8](https://github.com/Hironsan/ja.text8.git) for japanese corpus.  
+I use [ja.text8](https://github.com/Hironsan/ja.text8.git) for sample corpus/model.  
 Thanks to [Hironsan](https://github.com/Hironsan) for providing [ja.text8](https://github.com/Hironsan/ja.text8.git).
