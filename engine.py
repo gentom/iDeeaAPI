@@ -20,6 +20,25 @@ m = MeCab.Tagger("-Owakati")
 def iDeea():
     if request.method == "POST":
         word = request.form['word']
+        words = m.parse(word)
+        words = words.split(' ')
+        print('---------')
+        print(len(words), words)
+        print(words[0])
+        print(words[1])
+
+        if len(words) > 2:
+            words = model.most_similar(positive=[words[0], words[1]])
+        else:
+            words = model.most_similar([words[0]])
+            
+        wordList = [words[i][0] for i in range(len(words))]
+        wordList_json = json.dumps(wordList, ensure_ascii=False)
+        return wordList_json
+'''
+def iDeea():
+    if request.method == "POST":
+        word = request.form['word']
         print(word)
         words = model.most_similar([word])
         wordList = [words[i] for i in range(len(words))]
@@ -27,24 +46,7 @@ def iDeea():
         wordList = [words[i][0] for i in range(len(words))]
         wordList_json = json.dumps(wordList, ensure_ascii=False)
         return wordList_json
-
-@app.route("/merge", methods=['POST'])
-def MergeX():
-    if request.method == "POST":
-        word = request.form['word']
-        words = m.parse(word)
-        words = words.split(' ')
-        print('---------')
-        print(len(words), words)
-        print(words[0])
-        print(words[1])
-        if len(words) > 2:
-            words = model.most_similar(positive=[words[0], words[1]])
-        else:
-            words = model.most_similar([words[0]])
-        wordList = [words[i][0] for i in range(len(words))]
-        wordList_json = json.dumps(wordList, ensure_ascii=False)
-        return wordList_json
+'''
 
 if __name__ == "__main__":
     #app.run(debug=True, port=8000)
